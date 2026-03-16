@@ -87,7 +87,7 @@ function generateInitialData(): StudyData {
         },
         {
           id: `${i}-5`,
-          title: "Joining the Live Lesson",
+          title: "Coding",
           description: "Engage, ask questions, take notes",
           icon: "live",
           completed: false,
