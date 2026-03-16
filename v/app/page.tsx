@@ -5,9 +5,8 @@ import { DashboardView } from "@/components/dashboard-view"
 import { DayDetailView } from "@/components/day-detail-view"
 import { StudyData, DayData, TaskData } from "@/lib/types"
 
-// Generate initial 30-day program data
 function generateInitialData(): StudyData {
-  const startDate = new Date(2025, 2, 12) // March 12, 2025
+  const startDate = new Date(2025, 2, 12) 
   const days: DayData[] = []
 
   for (let i = 0; i < 30; i++) {
@@ -15,7 +14,7 @@ function generateInitialData(): StudyData {
     date.setDate(startDate.getDate() + i)
     const dayOfWeek = date.getDay()
     const isWeekend = dayOfWeek === 0 || dayOfWeek === 6
-    const isMockTestDay = dayOfWeek === 0 // Sunday
+    const isMockTestDay = dayOfWeek === 0 
 
     let tasks: TaskData[]
 
@@ -123,7 +122,7 @@ function generateInitialData(): StudyData {
   return {
     programName: "IELTS",
     startDate,
-    endDate: new Date(2025, 3, 10), // April 10, 2025
+    endDate: new Date(2025, 3, 10), 
     days,
     currentStreak: 0,
     quote: {
@@ -139,7 +138,6 @@ export default function StudyTracker() {
       const saved = localStorage.getItem("studyData")
       if (saved) {
         const parsed = JSON.parse(saved)
-        // Convert date strings back to Date objects
         parsed.startDate = new Date(parsed.startDate)
         parsed.endDate = new Date(parsed.endDate)
         parsed.days = parsed.days.map((day: DayData) => ({
@@ -155,12 +153,10 @@ export default function StudyTracker() {
   const [selectedDay, setSelectedDay] = useState<number | null>(null)
   const [view, setView] = useState<"dashboard" | "day">("dashboard")
 
-  // Save to localStorage whenever data changes
   useEffect(() => {
     localStorage.setItem("studyData", JSON.stringify(data))
   }, [data])
 
-  // Calculate stats
   const totalTasksDone = data.days.reduce(
     (acc, day) => acc + day.tasks.filter((t) => t.completed).length,
     0
@@ -169,7 +165,6 @@ export default function StudyTracker() {
   const totalTasks = data.days.reduce((acc, day) => acc + day.tasks.length, 0)
   const progress = Math.round((totalTasksDone / totalTasks) * 100)
 
-  // Calculate streak
   const calculateStreak = useCallback(() => {
     let streak = 0
     const today = new Date()
