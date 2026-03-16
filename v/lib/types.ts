@@ -19,6 +19,8 @@ export interface DayData {
   completed: boolean
 }
 
+
+
 export interface StudyData {
   programName: string
   startDate: Date
