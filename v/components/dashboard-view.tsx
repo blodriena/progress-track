@@ -169,6 +169,7 @@ export function DashboardView({
         </div>
 
 
+
         {/* Calendar Grid */}
         <div className="mb-8">
           <h3 className="mb-4 text-sm uppercase tracking-wider text-muted-foreground">
