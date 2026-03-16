@@ -132,6 +132,7 @@ function generateInitialData(): StudyData {
   }
 }
 
+
 export default function StudyTracker() {
   const [data, setData] = useState<StudyData>(() => {
     if (typeof window !== "undefined") {
