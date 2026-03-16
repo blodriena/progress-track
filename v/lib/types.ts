@@ -4,11 +4,11 @@ export interface TaskData {
   description: string
   icon: "reading" | "article" | "listening" | "podcast" | "live" | "vocabulary"
   completed: boolean
-  timer: number // in seconds
+  timer: number 
   url: string
   score?: number
   maxScore?: number
-  label?: string // e.g., "questions", "correct", "words learned"
+  label?: string 
 }
 
 export interface DayData {
