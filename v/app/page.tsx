@@ -119,6 +119,7 @@ function generateInitialData(): StudyData {
     })
   }
 
+  
   return {
     programName: "IELTS",
     startDate,
