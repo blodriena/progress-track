@@ -10,9 +10,6 @@ export interface TaskData {
   maxScore?: number
   label?: string 
 }
-
-
-
 export interface DayData {
   id: number
   date: Date
