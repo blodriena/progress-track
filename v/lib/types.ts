@@ -18,10 +18,6 @@ export interface DayData {
   notes: string
   completed: boolean
 }
-
-
-
-
 export interface StudyData {
   programName: string
   startDate: Date
