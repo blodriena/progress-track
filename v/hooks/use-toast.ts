@@ -162,8 +162,6 @@ function toast({ ...props }: Toast) {
     dismiss,
     update,
   }
-
-  
 }
 function useToast() {
   const [state, setState] = React.useState<State>(memoryState)
